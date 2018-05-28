@@ -1,4 +1,4 @@
-## 学习Google Protocal Buffer
+## 学习Google Protocol Buffer
 ## protoc 的使用
 <https://blog.csdn.net/giskook/article/details/10108997>
 
