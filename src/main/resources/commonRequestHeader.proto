@@ -1,0 +1,13 @@
+package fluxapi.request;
+
+enum messageType {
+  JSON = 0;
+  XML = 1;
+  PROTO = 2;
+}
+message reqHeader {
+  required string timestamp = 1;
+  required string identity = 2;
+  required messageType type = 3 [default = PROTO];
+  required string sign = 4;
+}

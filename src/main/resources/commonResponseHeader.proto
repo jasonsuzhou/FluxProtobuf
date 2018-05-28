@@ -1,0 +1,6 @@
+package fluxapi.response;
+
+message respHeader {
+  required int32 errcode = 1;
+  optional string errmsg = 2;
+}

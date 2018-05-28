@@ -1,0 +1,63 @@
+package fluxapi;
+import "commonRequestHeader.proto";
+import "commonResponseHeader.proto";
+
+message topupRequest
+{
+  required fluxapi.request.reqHeader header = 1;
+  message payloadBody {
+    required string user = 1;
+    required int32 scope = 2;
+    required string orderno = 3;
+    required string mobile = 4;
+    required int32 activeflag = 5;
+    required int32 expiration = 6;
+    required int32 fluxnum = 7;
+    optional string pcode = 8;
+  }
+  required payloadBody payload = 2;
+}
+message topupResponse
+{
+  required fluxapi.response.respHeader header = 1;
+  message payloadBody {
+    required string orderid = 1;
+  }
+  required payloadBody payload = 2;
+}
+
+message queryResultRequest
+{
+  required fluxapi.request.reqHeader header = 1;
+  message payloadBody {
+    required string orderid = 1;
+  }
+  required payloadBody payload = 2;
+}
+message queryResultResponse
+{
+  required fluxapi.response.respHeader header = 1;
+  message payloadBody {
+    required int32 result = 1;
+    optional string desc = 2;
+  }
+  required payloadBody payload = 2;
+}
+
+message queryBalanceRequest
+{
+  required fluxapi.request.reqHeader header = 1;
+  message payloadBody {
+    required string user = 1;
+  }
+  required payloadBody payload = 2;
+}
+message queryBalanceResponse
+{
+  required fluxapi.response.respHeader header = 1;
+  message payloadBody {
+    required string balance = 1;
+    required string currency = 2 [default = "CNY"];
+  }
+  required payloadBody payload = 2;
+}
